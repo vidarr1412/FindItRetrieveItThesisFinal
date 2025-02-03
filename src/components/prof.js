@@ -7,12 +7,8 @@ import "../style/prof.css";
 
 function Profile() {
   const [user, setUser] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
-    image_Url: "",
+  
+
   });
   const qrCodeRef = useRef(null); // Reference for QRCodeCanvas
   const [selectedFile, setSelectedFile] = useState(null);
@@ -41,6 +37,7 @@ function Profile() {
           lastName: data.lastName || "",
           email: data.email || "",
           image_Url: data.image_Url || "prof.jpg",
+          contactNumber:data.contactNumber||"",
         });
       } catch (error) {
         console.error("Error fetching user data:", error);
@@ -120,6 +117,7 @@ function Profile() {
           lastName: user.lastName,
           email: user.email,
           password: user.password,
+          contactNumber:user.contactNumber,
           image_Url: user.image_Url,
         }),
       });
@@ -140,7 +138,28 @@ function Profile() {
     const canvas = qrCodeRef.current; // Reference to the QRCodeCanvas component
     if (canvas && canvas.querySelector("canvas")) {
       const qrCanvas = canvas.querySelector("canvas");
-      const imageURL = qrCanvas.toDataURL("image/png");
+      
+      // Create a new canvas to apply the background and border
+      const newCanvas = document.createElement('canvas');
+      const context = newCanvas.getContext('2d');
+      
+      const padding = 20; // Padding value
+      const size = 150 + padding * 2; // Adjust size based on padding
+      newCanvas.width = size;
+      newCanvas.height = size;
+  
+      // Set the background color and draw a border
+      context.fillStyle = 'white';
+      context.fillRect(0, 0, newCanvas.width, newCanvas.height); // White background
+      context.lineWidth = 2;
+      context.strokeStyle = 'black';
+      context.strokeRect(0, 0, newCanvas.width, newCanvas.height); // Black border
+  
+      // Draw the original QR code onto the new canvas with padding
+      context.drawImage(qrCanvas, padding, padding, 150, 150);
+  
+      // Convert the canvas to an image and trigger the download
+      const imageURL = newCanvas.toDataURL("image/png");
       const link = document.createElement("a");
       link.href = imageURL;
       link.download = `${userId}-QRCode.png`; // Download the QR code with user ID
@@ -149,6 +168,7 @@ function Profile() {
       alert("QR Code not available!");
     }
   };
+  
 
   return (
     <div className="home-container1">
@@ -182,6 +202,10 @@ function Profile() {
             <div className="form-group">
               <label>Email Address</label>
               <input type="email" value={user.email} onChange={(e) => setUser({ ...user, email: e.target.value })} />
+            </div>
+            <div className="form-group">
+              <label>Contact Number</label>
+              <input type="text" value={user.contactNumber} onChange={(e) => setUser({ ...user, contactNumber: e.target.value })} />
             </div>
             <div className="form-group">
               <label>Password (Leave blank to keep current password)</label>

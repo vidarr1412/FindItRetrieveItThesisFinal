@@ -10,8 +10,10 @@ function Auth() {
 
   const handleSignUp = async (e) => {
     e.preventDefault();
-    const name = e.target.name.value;
+    const firstName = e.target.firstName.value;
+    const lastName = e.target.lastName.value;
     const email = e.target.email.value;
+    const contactNumber = e.target.contactNumber.value;
     const password = e.target.password.value;
     
 
@@ -19,7 +21,7 @@ function Auth() {
       const response = await fetch("http://10.10.83.224:5000/signup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, password }),
+        body: JSON.stringify({ firstName,lastName,contactNumber, email, password }),
       });
 
       const data = await response.json();
@@ -71,7 +73,9 @@ function Auth() {
       <div className={`form-container sign-up`}>
         <form onSubmit={handleSignUp}>
           <h1>Create Account</h1>
-          <input type="text" name="name" placeholder="Name" required />
+          <input type="text" name="firstName" placeholder="First Name" required />
+          <input type="text" name="lastName" placeholder="Last Name" required />
+          <input type="text" name="contactNumber" placeholder="Contact Number" required />
           <input type="email" name="email" placeholder="Email" required />
           <input type="password" name="password" placeholder="Password" required />
           <button type="submit">Sign Up</button>

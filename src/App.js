@@ -10,6 +10,7 @@ import ManageRequest from './components/manageRequest';
 import ReportItem from './components/report';
 import Dashboard from './components/dash';
 import Auth from './components/log';
+import ItemScanner from './components/scanner';
 import Additem from './components/additem';
 import UserComplaint from './components/userComplaint';
 import Bulletin from './components/bulletinboard';
@@ -75,6 +76,14 @@ function App() {
             element={
               <AdminRoute>
                 <Manage />
+              </AdminRoute>
+            }
+          />
+          <Route
+            path="/ItemScan"
+            element={
+              <AdminRoute>
+                <ItemScanner />
               </AdminRoute>
             }
           />

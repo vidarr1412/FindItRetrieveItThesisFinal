@@ -27,7 +27,7 @@ mongoose
 const SECRET_KEY = "polgary";
 //--------------------signing upppp----------------------------------------
 app.post("/signup", async (req, res) => {
-    const { name, email, password,usertype } = req.body;
+    const { firstName,lastName, email, password,usertype,contactNumber, } = req.body;
   
     try {
       const existingUser = await User.findOne({ email });
@@ -36,7 +36,7 @@ app.post("/signup", async (req, res) => {
       }
   
       const hashedPassword = await bcrypt.hash(password, 10);
-      const user = new User({ name, email, password: hashedPassword ,usertype: "student"});
+      const user = new User({ firstName,lastName,contactNumber, email, password: hashedPassword ,usertype: "student"});
   
       await user.save();
       res.status(201).json({ message: "User registered successfully" });
@@ -61,7 +61,7 @@ app.post("/signup", async (req, res) => {
   // Update user profile (first name, last name, email)
   app.put("/update-profile/:userId", async (req, res) => {
     const { userId } = req.params;
-    const { firstName, lastName, email, password ,image_Url} = req.body;
+    const { firstName, lastName, email, password ,contactNumber,image_Url} = req.body;
   
     try {
       const user = await User.findById(userId);
@@ -74,6 +74,7 @@ app.post("/signup", async (req, res) => {
       user.lastName = lastName;
       user.email = email;
       user.image_Url=image_Url;
+      user.contactNumber=contactNumber;
   
       // If password is provided, hash it before saving
       if (password) {
@@ -110,7 +111,7 @@ app.post("/login", async (req, res) => {
 
   //idk what is this ahahahah-------------------------------------------
 app.post("/register", async (req, res) => {
-    const { name, email, contact, college, id } = req.body;
+    const { firstName,lastName,contactNumber, email, contact, college, id } = req.body;
   
     try {
       const newItem = new Item({ name, email, contact, college, id });

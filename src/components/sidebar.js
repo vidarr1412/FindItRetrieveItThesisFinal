@@ -38,7 +38,7 @@ const Sidebar = () => {
             <NavLink to="/" activeClassName="active">
               <FaHome className="nav-icon" /> Home
             </NavLink>
-            <NavLink to="/prof" activeClassName="active">
+            <NavLink to="/profile" activeClassName="active">
               <FaHome className="nav-icon" /> Profile
             </NavLink>
        
@@ -73,6 +73,9 @@ const Sidebar = () => {
             </NavLink>
             <NavLink to="/database" activeClassName="active">
               <FaFileAlt className="nav-icon" /> Database
+            </NavLink>
+            <NavLink to="/ItemScan" activeClassName="active">
+              <FaFileAlt className="nav-icon" /> Scan
             </NavLink>
           </>
         )}
