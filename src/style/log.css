@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
-
+.logout{
+  margin-top: auto;
+  margin-top: -50px;
+}
 .container {
   background-color: #fff;
   border-radius: 30px;

@@ -55,27 +55,28 @@ const Sidebar = () => {
         )}
         {userType === "admin@gmail.com" && (
           <>
+          <NavLink to="/" activeClassName="active">
+              <FaHome className="nav-icon" /> Home
+            </NavLink>
             <NavLink to="/dashboard" activeClassName="active">
               <FaChartLine className="nav-icon" /> Dashboard
             </NavLink>
-            <NavLink to="/profile" activeClassName="active">
-              <FaHome className="nav-icon" /> Profile
-            </NavLink>
+          
             <NavLink to="/complaints" activeClassName="active">
               <FaBox className="nav-icon" /> Lost Complaint done
             </NavLink>
             <NavLink to="/additem" activeClassName="active">
               <FaQrcode className="nav-icon" /> Found Items done
             </NavLink>
-           
+            <NavLink to="/ItemScan" activeClassName="active">
+              <FaFileAlt className="nav-icon" /> Scan Item
+            </NavLink>
             <NavLink to="/manaRequests" activeClassName="active">
               <FaUserCheck className="nav-icon" /> Manage Request
             </NavLink>
-            <NavLink to="/database" activeClassName="active">
-              <FaFileAlt className="nav-icon" /> Database
-            </NavLink>
-            <NavLink to="/ItemScan" activeClassName="active">
-              <FaFileAlt className="nav-icon" /> Scan
+         
+            <NavLink to="/profile" activeClassName="active">
+              <FaHome className="nav-icon" /> Profile
             </NavLink>
           </>
         )}

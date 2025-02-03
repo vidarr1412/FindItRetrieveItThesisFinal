@@ -21,14 +21,14 @@ function Home() {
           <p>
             Step into a world where the art of Interior Design is meticulously crafted to bring together timeless elegance and cutting-edge modern innovation. Allowing you to transform your living spaces into the epitome of luxury and sophistication.
           </p>
-          <NavLink to="/mana" activeClassName="active">
+          <NavLink to="/complaints" activeClassName="active">
           <button className="get-qr-button">File Report Now</button> {/**For students */}
      
              
                   </NavLink>
           <div className='divider'></div>
-          <NavLink to="/mana" activeClassName="active">
-          <button className="get-qr-button">Add Item Now</button>{/**For admin */}
+          <NavLink to="/ItemScan" activeClassName="active">
+          <button className="get-qr-button">Scan Now</button>{/**For admin */}
           
           </NavLink>
         </div>
