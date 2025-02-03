@@ -1,0 +1,132 @@
+
+.main-content {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: flex-start; /* Align to the top */
+  flex-grow: 1; /* Take up the remaining space */
+  padding: 20px;
+  margin-left: 200px; /* Space to avoid overlap with the sidebar */
+  background-image: url('msu.jpg'); /* Add your background image */
+  background-size: cover; /* Cover the entire area */
+  background-position: center; /* Center the image */
+  color: #fff;
+  flex-direction: column;
+  height: 100vh; /* Full viewport height */
+  overflow: hidden; /* Prevent scrolling */
+  box-sizing: border-box; /* Ensure padding doesn't affect height */
+}
+  /* Fixed Header Styles */
+  header {
+    display: flex;
+    justify-content: center;
+    padding: 0px;
+    background-color: #F3D558; /* Yellow background for the header */
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed; /* Fix header to the top */
+    width: 100%;
+
+    top: 0;
+    z-index: 1000; /* Ensure it stays above other elements */
+    margin-left: 220px;
+  }
+  
+  /* Sidebar Styles */
+  .sidebar {
+    background-color: #850F13;
+    color: #fff;
+    width: 180px; /* Fixed width for the sidebar */
+    padding: 20px;
+    position: fixed; /* Keep the sidebar fixed */
+    height: 100%; /* Full height */
+    top: 0px; /* Push sidebar down below the header */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+  }
+  
+  /* Logo Styles */
+  .logo {
+    width: 220px;
+  }
+
+
+  /* Content Section Styles */
+  .cont {
+    text-align: start;
+    margin-top: 100px;
+    max-width: 600px; /* Set a maximum width */
+    width: 100%;
+    padding: 20px 50px;
+}
+
+.cont h1 {
+    font-size: 3vw; /* Use viewport width for responsive scaling */
+    margin-bottom: 20px;
+}
+
+.cont p {
+    font-size: 1.2vw; /* Use viewport width for responsive scaling */
+    margin-bottom: 30px;
+}
+
+.get-qr-button {
+    background-color: #FFD700; /* Gold button */
+    color: #8B0000; /* Dark red text */
+    border: none;
+    padding: 15px 30px;
+    font-size: 1vw; /* Use viewport width for responsive scaling */
+    cursor: pointer;
+
+}
+.get-qr-button:hover {
+  background-color: #ffff00;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Center the .cont within the .main-content */
+.main-content {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: flex-start; /* Align to the top */
+    flex-grow: 1; /* Take up the remaining space */
+    padding: 20px;
+
+    margin-left: 200px; /* Space to avoid overlap with the sidebar */
+
+  background-image: url('msu.jpg'); /* Add your background image */
+  background-size: cover; /* Cover the entire area */
+  background-position: center; /* Center the image */
+  color: #fff;
+  flex-direction: column;
+  height: 100px;
+  height: 100vh; /* Full viewport height */
+  overflow: hidden; /* Prevent scrolling */
+  box-sizing: border-box; /* Ensure padding doesn't affect height */
+}
+
+  
+  /* Statistics Styles */
+  .statistics {
+    display: flex;
+    justify-content: space-around;
+    margin-top: -30px;
+    width: 100%;
+  }
+  
+  .stat-item {
+    text-align: center; /* Center text in stat items */
+  }
+  
+  .stat-item h2 {
+    font-size: 60px;
+    margin-bottom: 10px;
+  }
+  
+  .stat-item p {
+    font-size: 18px;
+  }
+
+ .divider{
+  padding: 10px;
+ }
