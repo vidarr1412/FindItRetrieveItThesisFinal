@@ -165,7 +165,7 @@ function Additem() {
           <div className="breadcrumb">Manage Lost and Found {'>'} Manage Found Items</div>
           <div className="top-right-buttons">
             <button className="add-item-btn" onClick={() => openModal()}>+ Add Found Item</button>
-            <button className="register-qr-btn">Register QR Code</button>
+     
           </div>
           <div className="search-bar">
             <input

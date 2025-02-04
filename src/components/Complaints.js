@@ -182,7 +182,7 @@ function Manage() {
             <button className="add-item-btn" onClick={() => setShowModal(true)}>
               + File Complaints
             </button>
-            <button className="register-qr-btn">Register QR Code</button>
+          
           </div>
 
           <div className="search-bar">
